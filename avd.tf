@@ -152,7 +152,7 @@ resource "azurerm_virtual_desktop_host_pool" "avd_hp" {
   custom_rdp_properties    = "audiocapturemode:i:1;audiomode:i:0;targetisaadjoined:i:1;"
   description              = var.avd_hostpool_description
   type                     = var.avd_hostpool_type
-  maximum_sessions_allowed = 15
+  maximum_sessions_allowed = 5
   load_balancer_type       = "DepthFirst"
 }
 
