@@ -214,8 +214,9 @@ resource "azurerm_virtual_desktop_workspace_application_group_association" "work
 resource "azurerm_public_ip" "sessionhost_ext_nic" {
 
   count = var.avd_sessionhost_count
+  count_nic = var.avd_nic_count
 
-  name                = "${var.customer_prefix}-${var.avd_sessionhost_prefix}-${count.index}-pip-${count.index}"
+  name                = "${var.customer_prefix}-${var.avd_sessionhost_prefix}-${count.index}-pip-0"
   resource_group_name = azurerm_resource_group.rg_avd.name
   location            = azurerm_resource_group.rg_avd.location
   allocation_method   = "Static"
@@ -231,7 +232,7 @@ resource "azurerm_network_interface" "sessionhost_nic" {
   ]
   count = var.avd_sessionhost_count
 
-  name                = "${var.customer_prefix}-${var.avd_sessionhost_prefix}-${count.index}-nic-${count.index}"
+  name                = "${var.customer_prefix}-${var.avd_sessionhost_prefix}-${count.index}-nic-0"
   location            = azurerm_resource_group.rg_avd.location
   resource_group_name = azurerm_resource_group.rg_avd.name
 
@@ -262,7 +263,7 @@ resource "azurerm_windows_virtual_machine" "avd_sessionhost" {
   timezone                 = "W. Europe Standard Time"
 
   network_interface_ids = [
-    "${azurerm_resource_group.rg_avd.id}/providers/Microsoft.Network/networkInterfaces/${var.customer_prefix}-${var.avd_sessionhost_prefix}-${count.index}-nic-${count.index}"
+    "${azurerm_resource_group.rg_avd.id}/providers/Microsoft.Network/networkInterfaces/${var.customer_prefix}-${var.avd_sessionhost_prefix}-${count.index}-nic-0"
   ]
 
   identity {
