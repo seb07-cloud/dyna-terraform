@@ -363,6 +363,8 @@ resource "azurerm_role_assignment" "desktop_role" {
   principal_id       = data.azuread_group.aad_group.id
 }
 
+# Output VM Password
+
 output "vm_password" {
   value       = random_string.string.result
   description = "VM Password"
