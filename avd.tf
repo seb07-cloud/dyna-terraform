@@ -184,32 +184,32 @@ resource "azurerm_virtual_desktop_workspace_application_group_association" "work
   application_group_id = azurerm_virtual_desktop_application_group.desktopapp.id
 }
 
-resource "azurerm_log_analytics_workspace" "laws" {
-  name                = "${var.customer_prefix}-${var.laws_name_prefix}"
-  location            = azurerm_resource_group.rg_avd.location
-  resource_group_name = azurerm_resource_group.rg_avd.name
-  sku                 = "PerGB2018"
-  retention_in_days   = 30
-}
+#resource "azurerm_log_analytics_workspace" "laws" {
+#  name                = "${var.customer_prefix}-${var.laws_name_prefix}"
+#  location            = azurerm_resource_group.rg_avd.location
+#  resource_group_name = azurerm_resource_group.rg_avd.name
+#  sku                 = "PerGB2018"
+#  retention_in_days   = 30
+#}
 
-resource "azurerm_monitor_diagnostic_setting" "avd-hostpool" {
-    depends_on = [
-    azurerm_virtual_desktop_host_pool.avd_hp
-  ]
-
-  name                       = "${var.customer_prefix}-avd-diagnostics"
-  target_resource_id         = azurerm_virtual_desktop_host_pool.avd_hp.id
-  log_analytics_workspace_id = azurerm_log_analytics_workspace.laws.id
-
-  log {
-    category = "Error"
-    enabled  = true
-
-    retention_policy {
-      enabled = false
-    }
-  }
-}
+#resource "azurerm_monitor_diagnostic_setting" "avd-hostpool" {
+#    depends_on = [
+#    azurerm_virtual_desktop_host_pool.avd_hp
+#  ]
+#
+#  name                       = "${var.customer_prefix}-avd-diagnostics"
+#  target_resource_id         = azurerm_virtual_desktop_host_pool.avd_hp.id
+#  log_analytics_workspace_id = azurerm_log_analytics_workspace.laws.id
+#
+#  log {
+#    category = "Error"
+#    enabled  = true
+#
+#    retention_policy {
+#      enabled = false
+#    }
+#  }
+#}
 
 resource "azurerm_public_ip" "sessionhost_ext_nic" {
 
@@ -262,7 +262,7 @@ resource "azurerm_windows_virtual_machine" "avd_sessionhost" {
   timezone                 = "W. Europe Standard Time"
 
   network_interface_ids = [
-    "${azurerm_resource_group.rg_avd.id}/providers/Microsoft.Network/networkInterfaces/${var.customer_prefix}-${var.avd_sessionhost_prefix}-${count.index}-nic"
+    "${azurerm_resource_group.rg_avd.id}/providers/Microsoft.Network/networkInterfaces/${var.customer_prefix}-${var.avd_sessionhost_prefix}-nic-${count.index}"
   ]
 
   identity {
