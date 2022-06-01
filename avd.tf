@@ -219,7 +219,7 @@ resource "azurerm_public_ip" "sessionhost_ext_nic" {
   allocation_method   = "Static"
 
   tags = {
-    environment = "Production"
+    ENV = "STAGE"
   }
 }
 
@@ -282,7 +282,7 @@ resource "azurerm_windows_virtual_machine" "avd_sessionhost" {
   }
 
   tags = {
-    environment = "Production"
+    ENV = "STAGE"
     hostpool    = var.avd_workspace_name
   }
 }
