@@ -54,5 +54,3 @@ avd_sessionhost_prefix = "avd"
 customer_prefix = "nyze"
 sharename_groups = "groups"
 sharename_fslogix = "profiles"
-
-## wzsZ4KakrRFZMXlU

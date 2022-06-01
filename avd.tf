@@ -193,6 +193,10 @@ resource "azurerm_log_analytics_workspace" "laws" {
 }
 
 resource "azurerm_monitor_diagnostic_setting" "avd-hostpool" {
+    depends_on = [
+    azurerm_virtual_desktop_host_pool.avd_hp
+  ]
+
   name                       = "${var.customer_prefix}-avd-diagnostics"
   target_resource_id         = azurerm_virtual_desktop_host_pool.avd_hp.id
   log_analytics_workspace_id = azurerm_log_analytics_workspace.laws.id
