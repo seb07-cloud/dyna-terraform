@@ -118,6 +118,11 @@ variable "avd_sessionhost_count" {
   description = "Number of session host to deploy at first time"
 }
 
+variable "avd_nic_count" {
+  type        = number
+  description = "Number of session host to deploy at first time"
+}
+
 variable "avd_sessionhost_prefix" {
   type        = string
   description = "The sessionhosts prefix"
