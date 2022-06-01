@@ -185,7 +185,7 @@ resource "azurerm_virtual_desktop_workspace_application_group_association" "work
 }
 
 resource "azurerm_log_analytics_workspace" "laws" {
-  name                = "${var.customer_prefix}-${var.laws_name_prefix}-${random_integer.random.result}"
+  name                = "${var.customer_prefix}-${var.laws_name_prefix}"
   location            = azurerm_resource_group.rg_avd.location
   resource_group_name = azurerm_resource_group.rg_avd.name
   sku                 = "PerGB2018"

@@ -18,7 +18,7 @@ vnet_nsg_name = "nyze-nsg-vnet-infrastructure"
 
 # Diagnosics settings
 laws_name_prefix = "laws-avd"
-avd_diagnostics_name = "AVD - Diagnostics"
+avd_diagnostics_name = "AVD-Diagnostics"
 
 # VM Image 
 desktop_vm_image_publisher = "MicrosoftWindowsDesktop"
