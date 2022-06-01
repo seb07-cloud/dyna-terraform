@@ -52,7 +52,7 @@ variable "vnet_nsg_name" {
   description = "Network security group name"
 }
 
-variable "laws_name-prefix" {
+variable "laws_name_prefix" {
   type        = string
   description = "Enter the Loganalyics workspace name prefix"
 }
@@ -143,11 +143,11 @@ variable "customer_prefix" {
   type        = string
   description = "Prefix Customer"
 }
-variable "sharename-groups" {
+variable "sharename_groups" {
   type        = string
   description = "Share Name"
 }
-variable "sharename-fslogix" {
+variable "sharename_fslogix" {
   type        = string
   description = "Share Name"
 }
