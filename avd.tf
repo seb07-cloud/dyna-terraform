@@ -89,7 +89,7 @@ resource "azurerm_storage_account" "sa_files" {
 
 # Create Azure File Share
 resource "azurerm_storage_share" "groups" {
-  name                 = var.sharename-groups
+  name                 = var.sharename_groups
   storage_account_name = azurerm_storage_account.sa_files.name
   quota                = 50
 }
@@ -111,7 +111,7 @@ resource "azurerm_storage_account" "sa_fslogix" {
 
 # Create Azure File Share
 resource "azurerm_storage_share" "fslogix" {
-  name                 = var.sharename-fslogix
+  name                 = var.sharename_fslogix
   storage_account_name = azurerm_storage_account.sa_fslogix.name
   quota                = 50
 }
@@ -185,7 +185,7 @@ resource "azurerm_virtual_desktop_workspace_application_group_association" "work
 }
 
 resource "azurerm_log_analytics_workspace" "laws" {
-  name                = "${var.customer_prefix}-${var.laws_name-prefix}-${random_integer.random.result}"
+  name                = "${var.customer_prefix}-${var.laws_name_prefix}-${random_integer.random.result}"
   location            = azurerm_resource_group.rg_avd.location
   resource_group_name = azurerm_resource_group.rg_avd.name
   sku                 = "PerGB2018"
