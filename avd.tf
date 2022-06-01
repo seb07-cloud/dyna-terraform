@@ -33,6 +33,8 @@ provider "azurerm" {
   features {}
 }
 
+#test
+
 resource "time_rotating" "avd_token" {
   rotation_days = 27
 }
