@@ -74,7 +74,7 @@ resource "azurerm_subnet" "sn_avd" {
 
 # Storage Account Groups 
 resource "azurerm_storage_account" "sa_files" {
-  name                     = "sagroups${var.customer_prefix}"
+  name                     = "${var.customer_prefix}sagroups"
   resource_group_name      = azurerm_resource_group.rg_avd.name
   location                 = azurerm_resource_group.rg_avd.location
   account_tier             = "Standard"
@@ -96,7 +96,7 @@ resource "azurerm_storage_share" "groups" {
 
 # Storage Account FsLogix
 resource "azurerm_storage_account" "sa_fslogix" {
-  name                     = "safslogix${var.customer_prefix}"
+  name                     = "${var.customer_prefix}safslogix"
   resource_group_name      = azurerm_resource_group.rg_avd.name
   location                 = azurerm_resource_group.rg_avd.location
   account_tier             = "Standard"
@@ -145,7 +145,7 @@ resource "azurerm_virtual_desktop_host_pool" "avd_hp" {
   location            = azurerm_resource_group.rg_avd.location
   resource_group_name = azurerm_resource_group.rg_avd.name
 
-  name                     = var.avd_hostpool_name
+  name                     = "${var.customer_prefix}_${var.avd_hostpool_name}"
   friendly_name            = var.avd_hostpool_friendly_name
   validate_environment     = false
   start_vm_on_connect      = true
@@ -207,7 +207,7 @@ resource "azurerm_virtual_desktop_workspace_application_group_association" "work
 #
 #    retention_policy {
 #      enabled = false
-#    }
+#    } 
 #  }
 #}
 
