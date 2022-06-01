@@ -48,7 +48,6 @@ aad_group_name = "gr_AVD-Users"
 
 ## Sessionhosts AzureAD
 avd_sessionhost_count = 2
-avd_nic_count = 1
 avd_sessionhost_prefix = "avd"
 
 ## Customer Prefix 
