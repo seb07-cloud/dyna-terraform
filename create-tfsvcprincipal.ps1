@@ -1,7 +1,3 @@
-##########################################################################################
-# Create Service Principal for TF Authentication 
-##########################################################################################
-
 $env:AZ_SERVICE_PRINCIPAL = "tf-service-principal"
 
 Connect-AzAccount
