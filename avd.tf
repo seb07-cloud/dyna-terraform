@@ -151,7 +151,7 @@ resource "azurerm_virtual_desktop_host_pool" "avd_hp" {
   description              = var.avd_hostpool_description
   type                     = var.avd_hostpool_type
   maximum_sessions_allowed = 15
-  load_balancer_type       = "BreathFirst"
+  load_balancer_type       = "DepthFirst"
 }
 
 resource "azurerm_virtual_desktop_host_pool_registration_info" "registrationinfo" {
