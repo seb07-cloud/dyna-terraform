@@ -1,4 +1,4 @@
-# Configure the Azure provider
+#Configure the Azure provider
 terraform {
 
   cloud {
@@ -32,8 +32,6 @@ terraform {
 provider "azurerm" {
   features {}
 }
-
-#test123
 
 resource "time_rotating" "avd_token" {
   rotation_days = 27
