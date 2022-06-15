@@ -33,13 +33,13 @@ avd_hostpool_description = "HostPool AVD"
 avd_hostpool_type = "Pooled"
 
 ## Application Group
-avd_applicationgroup_name = "Nyze-Desktop"
+avd_applicationgroup_name = "Dyna-Desktop"
 avd_applicationgroup_friendly_name = "Applications"
 avd_applicationgroup_description = "A nice group of applications"
 avd_applicationgroup_type = "Desktop"
 
 ## Workpace
-avd_workspace_name = "AVD-Workspace"
+avd_workspace_name = "Dyna-Workspace"
 avd_workspace_friendly_name = "Workspace"
 avd_workspace_description = "Workspace"
 
@@ -51,6 +51,6 @@ avd_sessionhost_count = 1
 avd_sessionhost_prefix = "avd"
 
 ## Customer Prefix 
-customer_prefix = "customer-prefix"
+customer_prefix = "dynaaz"
 sharename_groups = "groups"
 sharename_fslogix = "profiles"
