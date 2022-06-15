@@ -39,7 +39,7 @@ avd_applicationgroup_description = "A nice group of applications"
 avd_applicationgroup_type = "Desktop"
 
 ## Workpace
-avd_workspace_name = "Nyze-Workspace"
+avd_workspace_name = "AVD-Workspace"
 avd_workspace_friendly_name = "Workspace"
 avd_workspace_description = "Workspace"
 
@@ -51,6 +51,6 @@ avd_sessionhost_count = 1
 avd_sessionhost_prefix = "avd"
 
 ## Customer Prefix 
-customer_prefix = "nyze"
+customer_prefix = "customer-prefix"
 sharename_groups = "groups"
 sharename_fslogix = "profiles"
