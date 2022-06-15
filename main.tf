@@ -1,10 +1,10 @@
 #Configure the Azure provider
 terraform {
   cloud {
-    organization = "seb07"
+    organization = "dynabcs"
 
     workspaces {
-      name = "dynabcs"
+      name = "dynabcs-test"
     }
   }
 
