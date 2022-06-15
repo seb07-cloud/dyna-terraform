@@ -1,18 +1,18 @@
 #Configure the Azure provider
 terraform {
-
   cloud {
     organization = "seb07"
 
     workspaces {
-      name = "avd"
+      name = "dynabcs"
     }
   }
+}
 
   required_providers {
     azurerm = {
       source  = "hashicorp/azurerm"
-      version = "=3.7.0"
+      version = "=3.9.0"
     }
     azuread = {
       source  = "hashicorp/azuread"
