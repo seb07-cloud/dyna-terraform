@@ -14,21 +14,6 @@ resource "azurerm_subnet" "sn_avd" {
   address_prefixes     = var.vnet_subnet_address
 }
 
-# Storage Account Groups 
-resource "azurerm_storage_account" "sa_files" {
-  name                     = "${var.customer_prefix}sagroups"
-  resource_group_name      = azurerm_resource_group.rg_avd.name
-  location                 = azurerm_resource_group.rg_avd.location
-  account_tier             = "Standard"
-  account_replication_type = "LRS"
-  account_kind             = "StorageV2"
-  access_tier              = "Hot"
-
-  tags = {
-    environment = "prod"
-  }
-}
-
 ## NSG Config
 resource "azurerm_network_security_group" "nsg" {
   name                = var.vnet_nsg_name
